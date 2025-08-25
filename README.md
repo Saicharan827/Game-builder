@@ -11,7 +11,7 @@ Game Builder is a Python application that uses AI agents to help build and evalu
 ## Prerequisites
 
 - Python 3.11 or later
-- Access to Watsonx API
+- Access to Gemini  API
 - Pygame library
 
 ## Installation
@@ -20,10 +20,7 @@ Game Builder is a Python application that uses AI agents to help build and evalu
 
 Start by cloning the repository to your local machine:
 
-```bash
-git clone https://github.com/charanhu/game_builder.git
-cd game_builder
-```
+
 
 ### Create a Virtual Environment
 
@@ -61,11 +58,7 @@ pip install -r requirements.txt
 
 Create a `.env` file in the root directory and add the following variables with your Watsonx API credentials:
 
-```env
-WATSONX_API=<your_watsonx_api_key>
-WATSONX_URL=<your_watsonx_api_url>
-WATSONX_PID=<your_watsonx_project_id>
-```
+
 
 ## Usage
 
@@ -82,9 +75,6 @@ Follow the prompts to specify the game you want to build or review. The applicat
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ### Explanation
 
