@@ -1,3 +1,4 @@
+import fix_sqlite
 import streamlit as st
 import subprocess
 import sys
