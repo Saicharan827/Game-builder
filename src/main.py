@@ -22,6 +22,8 @@ def build_game(game_description: str):
         agents=[senior_engineer, qa_engineer, chief_qa],
         tasks=[code_task, review_task, evaluate_task],
         verbose=True,
+        knowledge=None,
+        storage=None
     )
 
     final_game_code = crew.kickoff()
