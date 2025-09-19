@@ -1,8 +1,17 @@
 import os
 import re
+import sys
+import types
+
+# 🩹 Patch: Fake chromadb so CrewAI never loads real sqlite-backed Chroma
+fake_chroma = types.ModuleType("chromadb")
+fake_chroma.Client = lambda *a, **k: None
+sys.modules["chromadb"] = fake_chroma
+
 from crewai import Crew
 from tasks import GameTasks
 from agents import GameAgents
+
 
 def build_game(game_description: str):
     """Creates agents, tasks, runs Crew, and returns final Python code string."""
@@ -22,6 +31,7 @@ def build_game(game_description: str):
         agents=[senior_engineer, qa_engineer, chief_qa],
         tasks=[code_task, review_task, evaluate_task],
         verbose=True,
+        # 🚫 no DB, no Chroma
         knowledge=None,
         storage=None
     )
